@@ -8,6 +8,7 @@ type Props = { onDark?: boolean; compact?: boolean };
 /** CareTrack RCM wordmark with an abstract "revenue pulse" mark. */
 export default function Logo({ onDark = false, compact = false }: Props) {
   const ink = onDark ? "#F3F7FB" : "#0A1A2F";
+  const accent = onDark ? "#5EEAD4" : "#0E7490";
   return (
     <Box
       component="a"
@@ -55,7 +56,7 @@ export default function Logo({ onDark = false, compact = false }: Props) {
             }}
           >
             CareTrack
-            <Box component="span" sx={{ color: "#0E7490" }}>
+            <Box component="span" sx={{ color: accent }}>
               {" "}
               RCM
             </Box>
