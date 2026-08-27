@@ -37,7 +37,7 @@ export default function Process() {
         >
           {process.steps.map((step, i) => (
             <Reveal key={step.no} delay={i * 90}>
-              <Box sx={{ textAlign: { xs: "left", md: "center" } }}>
+              <Box sx={{ textAlign: "center" }}>
                 <Box
                   sx={{
                     position: "relative",
@@ -45,7 +45,7 @@ export default function Process() {
                     width: 56,
                     height: 56,
                     borderRadius: "50%",
-                    mx: { xs: 0, md: "auto" },
+                    mx: "auto",
                     display: "grid",
                     placeItems: "center",
                     fontFamily: "var(--font-jakarta)",
@@ -67,7 +67,7 @@ export default function Process() {
                     mt: 1,
                     color: "text.secondary",
                     maxWidth: 240,
-                    mx: { xs: 0, md: "auto" },
+                    mx: "auto",
                   }}
                 >
                   {step.body}

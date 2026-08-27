@@ -52,14 +52,26 @@ export default function Navbar() {
         }}
       >
         <Container maxWidth="lg">
-          <Toolbar disableGutters sx={{ minHeight: { xs: 68, md: 76 }, gap: 2 }}>
-            <Logo onDark={onDark} />
-            <Box sx={{ flexGrow: 1 }} />
+          <Toolbar
+            disableGutters
+            sx={{
+              minHeight: { xs: 68, md: 76 },
+              gap: 2,
+              justifyContent: "space-between",
+            }}
+          >
+            <Box sx={{ flex: "0 0 auto" }}>
+              <Logo onDark={onDark} />
+            </Box>
 
             <Stack
               direction="row"
               spacing={0.5}
-              sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
+              sx={{
+                display: { xs: "none", md: "flex" },
+                flex: "1 1 auto",
+                justifyContent: "center",
+              }}
             >
               {nav.map((item) => (
                 <Button
@@ -84,7 +96,11 @@ export default function Navbar() {
             <Stack
               direction="row"
               spacing={1.25}
-              sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
+              sx={{
+                display: { xs: "none", md: "flex" },
+                flex: "0 0 auto",
+                alignItems: "center",
+              }}
             >
               <Button href="#assessment" variant="contained" color="primary">
                 Book a demo
