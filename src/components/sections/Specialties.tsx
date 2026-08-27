@@ -33,15 +33,31 @@ export default function Specialties() {
           }}
         >
           {/* selector */}
-          <Stack
-            direction={{ xs: "row", md: "column" }}
-            spacing={1}
-            sx={{
-              flexWrap: { xs: "wrap", md: "nowrap" },
-              gap: { xs: 1, md: 1 },
-            }}
+          <Box
             role="tablist"
             aria-label="Specialties"
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "row", md: "column" },
+              gap: 1,
+              overflowX: { xs: "auto", md: "visible" },
+              overflowY: "visible",
+              scrollSnapType: { xs: "x proximity", md: "none" },
+              WebkitOverflowScrolling: "touch",
+              // fade the right edge on mobile as a scroll affordance
+              maskImage: {
+                xs: "linear-gradient(90deg, #000 92%, transparent 100%)",
+                md: "none",
+              },
+              pb: { xs: 1, md: 0 },
+              mx: { xs: -0.5, md: 0 },
+              px: { xs: 0.5, md: 0 },
+              "&::-webkit-scrollbar": { height: 6 },
+              "&::-webkit-scrollbar-thumb": {
+                bgcolor: "divider",
+                borderRadius: 3,
+              },
+            }}
           >
             {specialties.items.map((s, i) => {
               const selected = i === active;
@@ -52,11 +68,14 @@ export default function Specialties() {
                   aria-selected={selected}
                   onClick={() => setActive(i)}
                   sx={{
-                    justifyContent: "flex-start",
+                    justifyContent: { xs: "center", md: "flex-start" },
                     textAlign: "left",
-                    px: { xs: 2, md: 2.5 },
-                    py: { xs: 1.25, md: 1.75 },
+                    px: { xs: 2.25, md: 2.5 },
+                    py: { xs: 1.5, md: 1.75 },
+                    minHeight: 44,
                     borderRadius: 2.5,
+                    flexShrink: 0,
+                    scrollSnapAlign: "start",
                     width: { xs: "auto", md: "100%" },
                     border: "1px solid",
                     borderColor: selected ? "primary.main" : "divider",
@@ -64,6 +83,7 @@ export default function Specialties() {
                     color: selected ? "primary.dark" : "text.primary",
                     fontWeight: selected ? 700 : 600,
                     fontSize: "0.98rem",
+                    whiteSpace: "nowrap",
                     transition: "all 0.18s",
                     "&:hover": {
                       borderColor: "primary.main",
@@ -75,7 +95,7 @@ export default function Specialties() {
                 </ButtonBase>
               );
             })}
-          </Stack>
+          </Box>
 
           {/* detail */}
           <Box

@@ -185,11 +185,13 @@ const theme = createTheme({
           fontWeight: 600,
           paddingInline: 20,
           paddingBlock: 10,
+          minHeight: 44,
         },
         sizeLarge: {
           paddingInline: 26,
           paddingBlock: 13,
           fontSize: "1rem",
+          minHeight: 48,
         },
         outlined: {
           borderColor: tokens.borderStrong,
@@ -219,7 +221,7 @@ const theme = createTheme({
     },
     MuiChip: {
       styleOverrides: {
-        root: { fontWeight: 600, borderRadius: 8 },
+        root: { fontWeight: 600, borderRadius: 8, paddingBlock: 2 },
       },
     },
     MuiLink: {

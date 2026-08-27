@@ -8,6 +8,7 @@ import Stack from "@/components/primitives/Stack";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import LockRoundedIcon from "@mui/icons-material/LockRounded";
 import Section from "@/components/primitives/Section";
 import SectionHeading from "@/components/primitives/SectionHeading";
 import Reveal from "@/components/primitives/Reveal";
@@ -71,10 +72,20 @@ function Field({
         onChange={(_, v) => onChange(v as number)}
         aria-label={label}
         sx={{
+          py: 1.5,
           "& .MuiSlider-thumb": {
-            width: 18,
-            height: 18,
+            width: 24,
+            height: 24,
             boxShadow: "0 2px 8px rgba(14,116,144,0.4)",
+            "&:before": { boxShadow: "none" },
+            "&:after": {
+              // enlarges the touch/click hit area to ~44px without
+              // growing the visible thumb past a comfortable size
+              content: '""',
+              position: "absolute",
+              inset: -10,
+              borderRadius: "50%",
+            },
           },
         }}
       />
@@ -159,9 +170,21 @@ export default function RevenueCalculator() {
         >
           {/* Inputs */}
           <Box sx={{ p: { xs: 3, md: 5 }, bgcolor: "background.paper" }}>
-            <Typography variant="h5" sx={{ mb: 3 }}>
+            <Typography variant="h5" component="h3" sx={{ mb: 1 }}>
               Your practice
             </Typography>
+            <Stack
+              direction="row"
+              spacing={0.75}
+              alignItems="center"
+              sx={{ mb: 3 }}
+            >
+              <LockRoundedIcon sx={{ fontSize: 15, color: "text.secondary" }} />
+              <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                Calculated in your browser — nothing you enter is saved or
+                sent anywhere.
+              </Typography>
+            </Stack>
             <Stack spacing={3.5}>
               <Field
                 label="Monthly collections"

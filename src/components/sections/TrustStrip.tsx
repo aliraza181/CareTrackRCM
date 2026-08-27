@@ -23,7 +23,7 @@ export default function TrustStrip() {
             variant="body2"
             sx={{
               textAlign: "center",
-              color: "rgba(230,238,245,0.55)",
+              color: "rgba(230,238,245,0.75)",
               mb: 3,
             }}
           >
@@ -57,7 +57,7 @@ export default function TrustStrip() {
                 </Typography>
                 <Typography
                   variant="caption"
-                  sx={{ color: "rgba(230,238,245,0.6)" }}
+                  sx={{ color: "rgba(230,238,245,0.78)" }}
                 >
                   {item.label}
                 </Typography>
@@ -71,7 +71,7 @@ export default function TrustStrip() {
             display: "block",
             textAlign: "center",
             mt: 3,
-            color: "rgba(230,238,245,0.35)",
+            color: "rgba(230,238,245,0.5)",
           }}
         >
           {trustStrip.footnote}

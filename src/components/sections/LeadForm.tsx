@@ -77,7 +77,11 @@ export default function LeadForm() {
         <CheckCircleRoundedIcon
           sx={{ fontSize: 52, color: "success.main", mb: 1.5 }}
         />
-        <Typography variant="h4" component="p" sx={{ mb: 1 }}>
+        <Typography
+          variant="h4"
+          component="p"
+          sx={{ mb: 1, color: "text.primary" }}
+        >
           Thanks, {values.name.split(" ")[0] || "there"} 👋
         </Typography>
         <Typography sx={{ color: "text.secondary", mb: 3 }}>
@@ -114,7 +118,11 @@ export default function LeadForm() {
         boxShadow: "0 30px 70px rgba(6,20,38,0.18)",
       }}
     >
-      <Typography variant="h4" component="p" sx={{ mb: 0.5 }}>
+      <Typography
+        variant="h4"
+        component="p"
+        sx={{ mb: 0.5, color: "text.primary" }}
+      >
         Get your free revenue assessment
       </Typography>
       <Typography variant="body2" sx={{ color: "text.secondary", mb: 3 }}>

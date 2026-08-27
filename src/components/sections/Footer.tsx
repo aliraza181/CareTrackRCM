@@ -28,8 +28,12 @@ export default function Footer() {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "1.4fr repeat(3, 1fr)" },
-            gap: { xs: 5, md: 4 },
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "1fr 1fr",
+              md: "1.4fr repeat(3, 1fr)",
+            },
+            gap: { xs: 5, sm: 4 },
           }}
         >
           {/* brand */}
@@ -42,17 +46,29 @@ export default function Footer() {
               A revenue cycle management partner helping healthcare practices
               reduce denials, recover A/R, and get paid faster.
             </Typography>
-            <Stack spacing={1.25} sx={{ mt: 3 }}>
+            <Stack spacing={0.5} sx={{ mt: 3 }}>
               <Link
                 href={`tel:${company.phone.replace(/[^\d]/g, "")}`}
-                sx={{ color: "rgba(230,238,245,0.8)", display: "inline-flex", alignItems: "center", gap: 1 }}
+                sx={{
+                  color: "rgba(230,238,245,0.8)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  minHeight: 44,
+                  gap: 1,
+                }}
               >
                 <PhoneRoundedIcon sx={{ fontSize: 17 }} />
                 {company.phone}
               </Link>
               <Link
                 href={`mailto:${company.email}`}
-                sx={{ color: "rgba(230,238,245,0.8)", display: "inline-flex", alignItems: "center", gap: 1 }}
+                sx={{
+                  color: "rgba(230,238,245,0.8)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  minHeight: 44,
+                  gap: 1,
+                }}
               >
                 <EmailRoundedIcon sx={{ fontSize: 17 }} />
                 {company.email}
@@ -77,7 +93,7 @@ export default function Footer() {
               >
                 {col.title}
               </Typography>
-              <Stack spacing={1.25}>
+              <Stack spacing={0}>
                 {col.links.map((l) => (
                   <Link
                     key={l}
@@ -85,6 +101,9 @@ export default function Footer() {
                     sx={{
                       color: "rgba(230,238,245,0.72)",
                       fontWeight: 500,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      minHeight: 40,
                       "&:hover": { color: "#fff" },
                     }}
                   >

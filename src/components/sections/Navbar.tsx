@@ -86,17 +86,6 @@ export default function Navbar() {
               spacing={1.25}
               sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
             >
-              <Button
-                href="#assessment"
-                variant="text"
-                sx={{
-                  color: onDark ? "#F3F7FB" : "text.primary",
-                  transition: "color 0.2s ease",
-                  "&:hover": { bgcolor: linkHoverBg },
-                }}
-              >
-                Sign in
-              </Button>
               <Button href="#assessment" variant="contained" color="primary">
                 Book a demo
               </Button>

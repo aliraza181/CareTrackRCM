@@ -20,7 +20,7 @@ export const nav = [
   { label: "Specialties", href: "#specialties" },
   { label: "Technology", href: "#technology" },
   { label: "Results", href: "#results" },
-  { label: "About", href: "#security" },
+  { label: "Security", href: "#security" },
 ] as const;
 
 /* ---------------------------------------------------------------- Hero */

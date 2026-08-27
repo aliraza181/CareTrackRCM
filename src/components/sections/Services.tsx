@@ -116,9 +116,11 @@ export default function Services() {
                 <Link
                   href="#assessment"
                   sx={{
-                    mt: 3,
+                    mt: 2,
+                    py: 1.5,
                     display: "inline-flex",
                     alignItems: "center",
+                    minHeight: 44,
                     gap: 0.5,
                     color: "primary.main",
                     "&:hover": { gap: 1 },
