@@ -1,26 +1,40 @@
-@import "tailwindcss";
+/* Base globals — MUI CssBaseline handles the reset; this layer covers
+   what CssBaseline intentionally leaves alone. */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --page-max: 1200px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* Give anchored scroll targets breathing room under the fixed navbar. */
+[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Accessible, on-brand focus ring for keyboard users. */
+:focus-visible {
+  outline: 2px solid #0e7490;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
